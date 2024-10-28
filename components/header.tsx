@@ -3,7 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.gif";
 import { usePathname } from "next/navigation";
 
 function Header() {
@@ -32,7 +32,7 @@ function Header() {
               alt="logo"
             />
             <div className="ml-4 text-white -top-9 font-bold text-xs md:text-xl lg:text-xl lg:font-semibold max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto">
-              <span className="text-red-500">S</span>uper<span className="text-green-500">P</span>ump
+              <span className="text-red-500">Super</span><span className="text-green-500">Pump</span>
             </div>
           </Link>
         </div>
@@ -48,7 +48,7 @@ function Header() {
                   key={index}
                   className={`py-1 transition-all duration-300 transform ${
                     isActive
-                      ? "scale-105 shadow-lg border-r-4 border-b-4 border-solid border-[#d4b3ac]  bg-[#e9e1df] p-2 rounded-lg"
+                      ? "scale-105 shadow-lg border-r-4 border-b-4 border-solid border-green-500 bg-red-500 p-2 rounded-lg"
                       : ""
                   }`}
                 >
@@ -64,8 +64,16 @@ function Header() {
               );
             })}
           </ul>
-          <div className="connect-btn">
-            <ConnectButton accountStatus="avatar" />
+          <div className="flex items-center gap-4">
+            <button 
+              className="px-4 py-2 bg-gradient-to-r from-red-500 to-green-500 text-white rounded-lg hover:opacity-90 transition-opacity"
+              onClick={() => console.log('Switch to Parachain')}
+            >
+              Switch to Parachain
+            </button>
+            <div className="connect-btn">
+              <ConnectButton accountStatus="avatar" />
+            </div>
           </div>
         </div>
 
